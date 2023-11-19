@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Login Here!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form class="box" action="/index.html">
+      <h1>Login</h1>
+      <input type="text" name="" placeholder="Username" />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Password"
+      />
+      <input type="checkbox" id="showPassword" onclick="togglePassword()" />
+      Show Password
+      <input type="submit" value="Login" />
+    </form>
+
+    <script>
+      function togglePassword() {
+        var passwordField = document.getElementById("password");
+        var checkbox = document.getElementById("showPassword");
+
+        if (checkbox.checked) {
+          passwordField.type = "text";
+        } else {
+          passwordField.type = "password";
+        }
+      }
+    </script>
+  </body>
+</html>

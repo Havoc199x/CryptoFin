@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styleShop.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css?family=Black+Ops+One|Patrick+Hand&display=swap"
+      rel="stylesheet"
+    />
+    <title>Shop | CryptoFin</title>
+  </head>
+  <div style="text-align: center">
+    <a href="/index.html" style="color: white">Back</a>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const connectMetamaskButtons = document.querySelectorAll(
+        "#connect-metamask-shop"
+      );
+
+      if (typeof window.ethereum !== "undefined") {
+        connectMetamaskButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            window.ethereum
+              .request({ method: "eth_requestAccounts" })
+              .then(function () {
+                alert("MetaMask connected!");
+              })
+              .catch(function (error) {
+                alert("MetaMask connection error: " + error.message);
+              });
+          });
+        });
+      }
+    });
+  </script>
+
+  <body>
+    <div class="wrapper">
+      <article class="article1" style="border-color: white">
+        <button id="connect-metamask-shop">
+          <img src="/png/Dias1.png" style="width: 70px" />
+          <hr />
+          <p>100php</p>
+        </button>
+        <button id="connect-metamask-shop">
+          <img src="/png/Dias2.png" style="width: 70px" />
+          <hr />
+          <p>200php</p>
+        </button>
+        <button id="connect-metamask-shop">
+          <img src="/png/Dias4.png" style="width: 70px" />
+          <hr />
+          <p>500php</p>
+        </button>
+        <button id="connect-metamask-shop">
+          <img src="/png/Dias5.png" style="width: 70px" />
+          <hr />
+          <p>1,000php</p>
+        </button>
+        <button id="connect-metamask-shop">
+          <img src="/png/Dias6.png" style="width: 70px" />
+          <hr />
+          <p>5,000php</p>
+        </button>
+        <button id="connect-metamask-shop">
+          <img src="/png/Dias7.png" style="width: 70px" />
+          <hr />
+          <p>10,000php</p>
+        </button>
+      </article>
+
+      <article class="article2">
+        <button id="connect-metamask-shop">
+          <img src="/png/hook1.png" style="width: 70px" />
+          <hr />
+          <p>400php</p>
+        </button>
+        <button id="connect-metamask-shop">
+          <img src="/png/hook2.png" style="width: 70px" />
+          <hr />
+          <p>600php</p>
+        </button>
+        <button id="connect-metamask-shop">
+          <img src="/png/hook3.png" style="width: 70px" />
+          <hr />
+          <p>800php</p>
+        </button>
+        <button id="connect-metamask-shop">
+          <img src="/png/hook4.png" style="width: 70px" />
+          <hr />
+          <p>1,000php</p>
+        </button>
+        <button id="connect-metamask-shop">
+          <img src="/png/hook5.png" style="width: 70px" />
+          <hr />
+          <p>1,100php</p>
+        </button>
+        <button id="connect-metamask-shop">
+          <img src="/png/hook6.png" style="width: 70px" />
+          <hr />
+          <p>1,200php</p>
+        </button>
+      </article>
+
+      <label class="top-left">
+        <input
+          type="checkbox"
+          class="checkboxAudio"
+          id="musicCheckbox"
+          onchange="if (this.checked) playMusic(); else stopMusic();"
+        />
+        play sound
+        <p>Volume</p>
+      </label>
+      <label class="bottom-left">
+        <input
+          type="range"
+          id="volumeControl"
+          min="0"
+          max="1"
+          step="0.1"
+          value="1"
+          oninput="adjustVolume(this.value)"
+        />
+      </label>
+      <audio id="music" src="/audio/backgroundAudio.mp3" loop></audio>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+    </div>
+
+    <script>
+      const musicCheckbox = document.getElementById("musicCheckbox");
+      const music = document.getElementById("music");
+
+      musicCheckbox.addEventListener("change", function () {
+        if (musicCheckbox.checked) {
+          music.play();
+        } else {
+          music.pause();
+        }
+      });
+
+      function adjustVolume(volume) {
+        music.volume = volume;
+      }
+    </script>
+  </body>
+</html>
